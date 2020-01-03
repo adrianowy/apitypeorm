@@ -2,6 +2,7 @@ import {BaseEntity,Column,Entity,Index,JoinColumn,JoinTable,ManyToMany,ManyToOne
 import {dqwprofile} from "./dqwprofile";
 import {dqwstate} from "./dqwstate";
 import {dqwlanguage} from "./dqwlanguage";
+import { IsEmail, IsNotEmpty } from "class-validator";
 
 
 @Entity("dqwuser" ,{schema:"apitypeorm" } )
@@ -24,6 +25,7 @@ export class dqwuser {
         length:20,
         name:"EMP_NO"
         })
+    @IsNotEmpty()
     EMP_NO:string;
         
 
@@ -32,6 +34,7 @@ export class dqwuser {
         length:80,
         name:"EMP_NAME"
         })
+    @IsNotEmpty()
     EMP_NAME:string;
         
 
@@ -40,6 +43,7 @@ export class dqwuser {
         length:225,
         name:"PASSWORD"
         })
+    @IsNotEmpty()
     PASSWORD:string;
 
    
@@ -67,6 +71,7 @@ export class dqwuser {
         length:20,
         name:"UID1"
         })
+    @IsNotEmpty()
     UID1:string;
         
 
@@ -75,6 +80,7 @@ export class dqwuser {
         length:80,
         name:"EMAIL"
         })
+    @IsEmail()
     EMAIL:string | null;
         
 
